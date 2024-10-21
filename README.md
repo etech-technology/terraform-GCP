@@ -5,6 +5,22 @@ terraform in gcp
 # Always refer to the Gcloud documentation[link][https://cloud.google.com/sdk/gcloud/reference/config/set]
 
 ```hcl
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.71.0"
+    }
+  }
+}
+
+provider "aws" {
+  # Configuration options
+}
+
+```
+
+```hcl
 provider "google" {
   credentials = file("key.json") # do not forget to generate your own service acct key
   project     = "your-choice"
